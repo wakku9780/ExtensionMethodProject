@@ -15,6 +15,10 @@ namespace ExtensionMethodProject
             int i = 5;
             long result = i.Factorial();
             Console.WriteLine("Factorial of {0} is: {1}", i, result);
+
+            String str = "hElLo hOw Are yoU ";
+            str = str.ToProper();
+            Console.WriteLine(str);
             Console.ReadLine();
         }
 

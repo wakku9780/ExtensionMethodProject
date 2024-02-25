@@ -24,9 +24,27 @@ namespace ExtensionMethodProject
         }
         public static string ToProper(this string OldStr)
         {
-            if(OldStr.Trim().Length>0)
-                 string NewStr = null;
+            if (OldStr.Trim().Length > 0) { 
+                   string NewStr = null;
+                   OldStr = OldStr.ToLower();
+                   string []arr= OldStr.Split(' ');
 
+                foreach (string str in arr)
+                {
+                    char[] carr=str.ToCharArray();
+                    carr[0] = char.ToUpper(carr[0]);
+                    if (NewStr == null)
+                    {
+                        NewStr = new string(carr);
+                    }
+                    else
+                    {
+                        NewStr +=" "+ new string(carr);
+                    }
+                     
+                }
+                return NewStr;
+            }
             return OldStr; 
         }
     }
